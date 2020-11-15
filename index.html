@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
+		<link rel="shortcut icon" href="img/icons/favicon.ico">
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<link rel="stylesheet" href="css/Site.css"></link>
+
+		<script type="text/javascript" src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+		<script type="text/javascript" src="js/Editor.js"></script>
+		
+		<title>ToonIO</title>
+	</head>
+	<body>
+		<div class="content draw">
+			<div class="main draw">
+				<div class="editor">
+					<div class="tools up">
+						<div class="left">
+							<input type="color" class="color" data-tip="Brush color"></input><input type="text" class="color_label" maxlength="7" spellcheck="false" value="#000000"></input>
+						</div>
+						<div class="border"></div>
+						<span class="ui little b_width" data-tip="Brush width"></span><p class="big">Width: </p><input type="range" class="width" value="5" min="2" max="100"></input>
+						<div class="border"></div>
+						<span class="ui little b_speed" data-tip="Animation speed"></span><p class="big">Speed: </p><input type="range" class="fps" value="13" min="1" max="25"></input><div class="border"></div>
+						<span class="ui little b_lightbox victim" data-tip="Lightbox (onion skin)"></span><p class="big">Lightbox: </p><input type="range" class="lightbox victim" value="2" min="0" max="5"></input>
+						<div class="border"></div>
+						<span class="ui little b_scale" data-tip="Frame scale"></span><p class="big">Scale: </p><input type="range" class="scale" value="1.0" min="0.5" max="10.0" step="0.1"></input>
+						
+						<div class="tr">
+							<div class="border"></div>
+							<input type="button" class="control ui tool_12" data-tip="Copy the current frame" value="C" id="67"></input>
+							<input type="button" class="control ui tool_11" data-tip="Paste the copied frame without replacing current one" value="M" id="77"></input>
+							<input type="button" class="control ui tool_13" data-tip="Paste the copied frame with replacing current one" value="V" id="86"></input>
+						</div>
+					</div>
+					
+					<canvas id="editor" width="1000" height="650"></canvas>
+					
+					<div class="tools down">
+						<div class="tr">
+							<input type="button" class="control ui tool_5 fixed" data-tip="Lens" value="L" id="76"></input>
+							<input type="button" class="control ui tool_8 fixed" value="F" data-tip="Full screen" id="70"></input>
+							<input type="button" class="control ui play" value="P" data-tip="Play/stop" id="80"></input>
+							<input type="button" class="control ui add" value="A" data-tip="Add a new frame" id="65"></input>
+						</div>
+						
+						<div class="time">
+							<input type="button" class="control ui tool_9" value="←" data-tip="Move to the previous frame" id="37"></input>
+							<input type="button" class="control ui tool_10" value="→" data-tip="Move to the next frame" id="39"></input>
+							<div class="timeline"></div>
+						</div>
+						
+						<div class="tl">
+							<input type="button" class="control ui tool_14" value="Z" data-tip="Undo" id="90"></input>
+							<input type="button" class="control ui remove" value="R" data-tip="Remove the current frame" id="82"></input>
+						</div>
+					</div>
+					
+					<div class="camera">
+						<canvas width="200" height="130" id="camera"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
